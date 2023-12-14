@@ -2,9 +2,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require("mongoose")
-const dotenv = require("dotenv")
 
-dotenv.config()
 
 const { Schema } = mongoose
 
@@ -97,8 +95,7 @@ app.put('/products/:id', async (req, res) => {
 
 
 
-const url = process.env.CONNECTION_URL.replace('<password>', process.env.PASSWORD);
-mongoose.connect(url).catch(err => console.log("db not connect" + err))
+mongoose.connect('mongodb+srv://IlkinAkhmed:ilkin123@cluster0.ghwwmer.mongodb.net/').catch(err => console.log("db not connect" + err))
 
 app.get('/', (req, res) => {
     res.send(`<h1>Home Page</h1>`)
@@ -106,6 +103,6 @@ app.get('/', (req, res) => {
 
 
 
-app.listen(process.env.PORT, () => {
+app.listen(3000, () => {
     console.log('server 5000 portunda isleyir');
 })
