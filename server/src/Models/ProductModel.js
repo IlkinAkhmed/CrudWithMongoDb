@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-
 const { Schema } = mongoose;
+
 
 const productsSchema = new Schema(
   {
@@ -12,5 +12,6 @@ const productsSchema = new Schema(
   },
   { timestamps: true }
 );
+
 
 exports.Products = mongoose.model("Products", productsSchema);
